@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://dpl4eufapwgs2"]
-
-[node name="Main" type="Node3D"]
-
-[node name="NBodySystem" type="NBodySystem" parent="."]
-
-[node name="CelestialBody" type="CelestialBody" parent="NBodySystem"]
