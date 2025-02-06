@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://dixu8qwq8uuls"]
-
-[node name="Planet" type="CelestialBody"]
-mass = 1.0
-radius = 1.0
-
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-radius = 1.0
-rings = 12

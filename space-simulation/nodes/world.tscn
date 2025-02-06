@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://825fk8yejsgh"]
+
+[ext_resource type="PackedScene" uid="uid://dixu8qwq8uuls" path="res://nodes/celestial_bodies/planet.tscn" id="1_0b346"]
+[ext_resource type="Script" path="res://nodes/celestial_bodies/n_body_system.gd" id="1_pcoxf"]
+[ext_resource type="PackedScene" uid="uid://wl4xjuatg2je" path="res://nodes/celestial_bodies/star.tscn" id="3_872q4"]
+[ext_resource type="Sky" uid="uid://ccihdpguu6pxf" path="res://assets/skybox/skybox.tres" id="3_l3acw"]
+[ext_resource type="Script" path="res://nodes/camera_3d.gd" id="3_m7uw4"]
+
+[sub_resource type="Environment" id="Environment_qj244"]
+background_mode = 2
+sky = ExtResource("3_l3acw")
+ambient_light_color = Color(0.103744, 0.103744, 0.103744, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 7.57
+
+[node name="World" type="Node3D"]
+
+[node name="NBodySystem" type="NBodySystem" parent="."]
+gravitational_constant = 10.0
+script = ExtResource("1_pcoxf")
+
+[node name="Planet3" parent="NBodySystem" instance=ExtResource("1_0b346")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 0)
+velocity = Vector3(0, 20, 0)
+
+[node name="Planet2" parent="NBodySystem" instance=ExtResource("1_0b346")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2439, 0.12074, 0.337875)
+velocity = Vector3(0, 20, 0)
+
+[node name="Star" parent="NBodySystem" instance=ExtResource("3_872q4")]
+mass = 500.0
+radius = 5.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+script = ExtResource("3_m7uw4")
+zoom_min = 10.0
+zoom_max = 200.0
+drag_button = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qj244")

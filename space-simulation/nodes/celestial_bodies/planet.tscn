@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dixu8qwq8uuls"]
+
+[ext_resource type="Script" path="res://nodes/celestial_bodies/planet.gd" id="1_keija"]
+[ext_resource type="Texture2D" uid="uid://bag1dretvcool" path="res://assets/planet/2k_mercury.jpg" id="2_t80db"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vodhl"]
+albedo_texture = ExtResource("2_t80db")
+
+[node name="Planet" type="CelestialBody"]
+mass = 1.0
+radius = 1.0
+script = ExtResource("1_keija")
+
+[node name="Display" type="CSGSphere3D" parent="."]
+radius = 1.0
+radial_segments = 24
+rings = 24
+material = SubResource("StandardMaterial3D_vodhl")
