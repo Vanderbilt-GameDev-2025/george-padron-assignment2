@@ -1,0 +1,4 @@
+#include "modules/register_module_types.h"
+
+void initialize_gravity_simulation_module(ModuleInitializationLevel p_level);
+void uninitialize_gravity_simulation_module(ModuleInitializationLevel p_level);
