@@ -14,7 +14,6 @@ void NBodySystem::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_steps_per_frame"), &NBodySystem::get_steps_per_frame);
 	ClassDB::bind_method(D_METHOD("set_collisions_enabled", "enabled"), &NBodySystem::set_collisions_enabled);
 	ClassDB::bind_method(D_METHOD("are_collisions_enabled"), &NBodySystem::are_collisions_enabled);
-	ClassDB::bind_method(D_METHOD("predict_positions", "steps"), &NBodySystem::predict_positions);
 	ClassDB::bind_method(D_METHOD("set_running", "running"), &NBodySystem::set_running);
 	ClassDB::bind_method(D_METHOD("is_running"), &NBodySystem::is_running);
 	ClassDB::bind_method(D_METHOD("set_debug_logging", "debug_logging"), &NBodySystem::set_debug_logging);

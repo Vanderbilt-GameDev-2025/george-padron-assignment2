@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://825fk8yejsgh"]
+[gd_scene load_steps=8 format=3 uid="uid://825fk8yejsgh"]
 
 [ext_resource type="PackedScene" uid="uid://dixu8qwq8uuls" path="res://nodes/celestial_bodies/planet.tscn" id="1_0b346"]
 [ext_resource type="Script" path="res://nodes/celestial_bodies/n_body_system.gd" id="1_pcoxf"]
 [ext_resource type="PackedScene" uid="uid://wl4xjuatg2je" path="res://nodes/celestial_bodies/star.tscn" id="3_872q4"]
 [ext_resource type="Sky" uid="uid://ccihdpguu6pxf" path="res://assets/skybox/skybox.tres" id="3_l3acw"]
 [ext_resource type="Script" path="res://nodes/camera_3d.gd" id="3_m7uw4"]
+[ext_resource type="Script" path="res://nodes/character_body_3d.gd" id="6_bd70f"]
 
 [sub_resource type="Environment" id="Environment_qj244"]
 background_mode = 2
@@ -17,6 +18,7 @@ ambient_light_energy = 7.57
 
 [node name="NBodySystem" type="NBodySystem" parent="."]
 gravitational_constant = 10.0
+debug_logging = true
 script = ExtResource("1_pcoxf")
 
 [node name="Planet3" parent="NBodySystem" instance=ExtResource("1_0b346")]
@@ -40,3 +42,6 @@ drag_button = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qj244")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("6_bd70f")
