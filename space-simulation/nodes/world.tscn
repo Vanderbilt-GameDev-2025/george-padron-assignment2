@@ -18,7 +18,6 @@ ambient_light_energy = 7.57
 
 [node name="NBodySystem" type="NBodySystem" parent="."]
 gravitational_constant = 10.0
-debug_logging = true
 script = ExtResource("1_pcoxf")
 
 [node name="Planet3" parent="NBodySystem" instance=ExtResource("1_0b346")]

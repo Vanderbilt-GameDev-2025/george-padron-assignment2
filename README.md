@@ -1,6 +1,8 @@
 # Assignment 2 - Gravity Simulation
 > By George Padron
 
+- *Video included in the repo* 
+
 This module is a simple physics N-Body simulation for orbiting celestial bodies. Alongside it is a simple project with an interactive project showcasing a simple system. The module implements *two* new nodes: an **N-Body System** node which controls the main simulation, as well as a **Celestial Body** which reacts to other Celestial bodies under the same *N-Body System*, allowing for the simulation of solar systems.  
 
 The *N-Body System* node exposes parameters allowing for control of the gravitational constant, the amount of steps per frame, the collision handling, and whether or not the simulation is running or not. It also features simplistic logging for debugging purposes - showing the different phases of the simulation as well as the new position of the planets on each frame. 
